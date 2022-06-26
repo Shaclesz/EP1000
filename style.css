@@ -1,0 +1,42 @@
+body {
+    background-color: #EEE;
+    font-family:Arial, Helvetica, sans-serif
+}
+a{
+    text-decoration: none;
+    color: blue;
+}
+#container {
+    background-color: white;
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#header {
+    background-color: #66CCFF;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+#content {
+    padding: 10px;
+}
+#nav {
+    width: 200px;
+    float: left;
+}
+#nav .selected{
+    font-weight: bold;
+}
+
+#main {
+    width: 600px;
+    float: right;
+}
+#footer {
+    clear: both;
+    padding: 10px;
+    background-color: #999999;
+    color: white;
+    text-align: right;
+}
