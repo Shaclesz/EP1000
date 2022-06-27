@@ -25,9 +25,6 @@ a{
     width: 200px;
     float: left;
 }
-#nav .selected{
-    font-weight: bold;
-}
 
 #main {
     width: 600px;
