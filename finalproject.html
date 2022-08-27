@@ -13,10 +13,10 @@
                 <div id="nav">
     <ul>
         <p><b>Navigation:</b></p>
-        <li><a href="index.html"><b>Main Page</b></a></li>
+        <li><a href="index.html">Main Page</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="finalproject.html">Final Project</a></li>
+        <li><a href="finalproject.html"><b>Final Project</b></a></li>
     </ul>
 </body>
 </div>
@@ -44,6 +44,41 @@ make a simple one of my own.</p>
     <h1>Original Design Files</h1>
     <p>The picture below shows my design of the parts for the useless box on Fusion 360.</p>
     <td><img src="images/uselessbox.jpeg"style="width:230px;"></td>
+    <h1>Code for the Arduino</h1>
+    <p>#include <Servo.h>
+
+        const int  buttonPin = 2;
+        int buttonState = 0;
+        
+        Servo myservo;
+        int pos;
+        long timeDelay;
+        
+        void setup()
+        {
+        pinMode(buttonPin, INPUT);
+        myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+        }
+        
+        void loop() {
+        buttonState = digitalRead(buttonPin);  // Read the button position
+          if (buttonState == HIGH) {
+             for(pos = myservo.read(); pos <=90; pos += 1)  // goes from 10 degrees to 90 degrees in 1 step
+             {                                   
+               myservo.write(pos);  // tell servo to go to position in variable 'ONpos'
+               timeDelay = random(15, 30);
+               delay(15);  // randomize wait time for the servo to reach the position
+             }
+        }
+        else {
+             timeDelay = random(1, 4);
+             for(pos = myservo.read(); pos >=10; pos -= timeDelay)  // goes from 90 degrees to 10 degrees in 1 step 
+             {                           
+               myservo.write(pos);  // tell servo to go to position in variable 'OFFpos'                
+               delay(15);  // randomize wait time for the servo to reach the position
+             }
+          }
+        }</p>
 </body>
 <body>
     <h1>Photos of of work progress</h1>
@@ -53,6 +88,33 @@ make a simple one of my own.</p>
     <p>This is a picture of the inside of the box.</p>
     <td><img src="images/inside.jpeg"style="width:230px;"></td>
 </body>
+<body>
+    <h1>Bill Of Materials</h1>
+    <p>Arduino UNO  ($30)<br>
+    Breadboard  ($6)<br>
+    Servo Motor  ($2)<br>
+Small Switch  ($2)<br>
+Wires  ($3)<br>
+9V Battery  ($3)<br>
+9V Battery Clip  ($1)<br>
+Wood Glue  ($2)<br>
+10k Ohm Resistor  ($2)<br>
+</p>
+</body>
+<body>
+    <h1>Completion, Problems met</h1>
+    <p>I was able to complete the useless box but there are afew problems I encountered throughout<br>
+    the process. One of which is that when I plugged in the 9V battery, the arduino board will not work<br>
+as I programmed it.</p>
+<p>Another problem I encountered was that the servo motor was too weak to push the switch back to the<br>
+off position.</p>
+<p>For this 2 main problems, I could not find a solution to them.</p>
+<p>There was also other smaller problems that I managed to solved as well. For example, I wanted to<br>
+Place the motor at the bottom of the box at first but soon realised that it will thus block the arm<br>
+from rotating and the arm will not reach the switch as well. I then used some popsicle sticks to<br>
+raise the motor higher so the arm could reach the swtich.</p>
+</body>
+
 </div>
 <div id="footer">
     Copyright &copy; 2022 FengChen
