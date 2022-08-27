@@ -45,39 +45,39 @@ make a simple one of my own.</p>
     <p>The picture below shows my design of the parts for the useless box on Fusion 360.</p>
     <td><img src="images/uselessbox.jpeg"style="width:230px;"></td>
     <h1>Code for the Arduino</h1>
-    <p>#include <Servo.h>
+    <p>#include (Servo.h)<br>
 
-        const int  buttonPin = 2;
-        int buttonState = 0;
+        const int  buttonPin = 2;<br>
+        int buttonState = 0;<br>
         
-        Servo myservo;
-        int pos;
-        long timeDelay;
+        Servo myservo;<br>
+        int pos;<br>
+        long timeDelay;<br>
         
-        void setup()
-        {
-        pinMode(buttonPin, INPUT);
-        myservo.attach(9);  // attaches the servo on pin 9 to the servo object
-        }
+        void setup()<br>
+        {<br>
+        pinMode(buttonPin, INPUT);<br>
+        myservo.attach(9);  // attaches the servo on pin 9 to the servo object<br>
+        }<br>
         
-        void loop() {
-        buttonState = digitalRead(buttonPin);  // Read the button position
-          if (buttonState == HIGH) {
-             for(pos = myservo.read(); pos <=90; pos += 1)  // goes from 10 degrees to 90 degrees in 1 step
-             {                                   
-               myservo.write(pos);  // tell servo to go to position in variable 'ONpos'
-               timeDelay = random(15, 30);
-               delay(15);  // randomize wait time for the servo to reach the position
-             }
-        }
-        else {
-             timeDelay = random(1, 4);
-             for(pos = myservo.read(); pos >=10; pos -= timeDelay)  // goes from 90 degrees to 10 degrees in 1 step 
-             {                           
-               myservo.write(pos);  // tell servo to go to position in variable 'OFFpos'                
-               delay(15);  // randomize wait time for the servo to reach the position
-             }
-          }
+        void loop() {<br>
+        buttonState = digitalRead(buttonPin);  // Read the button position<br>
+          if (buttonState == HIGH) {<br>
+             for(pos = myservo.read(); pos <=90; pos += 1)  // goes from 10 degrees to 90 degrees in 1 step<br>
+             {<br>
+               myservo.write(pos);  // tell servo to go to position in variable 'ONpos'<br>
+               timeDelay = random(15, 30);<br>
+               delay(15);  // randomize wait time for the servo to reach the position<br>
+             }<br>
+        }<br>
+        else {<br>
+             timeDelay = random(1, 4);<br>
+             for(pos = myservo.read(); pos >=10; pos -= timeDelay)  // goes from 90 degrees to 10 degrees in 1 step<br>
+             {<br>
+               myservo.write(pos);  // tell servo to go to position in variable 'OFFpos'<br>
+               delay(15);  // randomize wait time for the servo to reach the position<br>
+             }<br>
+          }<br>
         }</p>
 </body>
 <body>
